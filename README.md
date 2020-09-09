@@ -1,3 +1,18 @@
+To run:
+
+1. run `npm install`
+2. `cd public/`
+3. `npx webpack` --> this will build an app.js file in /public
+4. `cd ../`
+5. run `npm start`
+6. go to localhost:8000
+
+#### Less than ideal things about current local dev setup
+
+- webpack config should be global, not in `/public`
+- build output should go to a `/build` folder
+- should have hot reloading with webpack & node
+
 # Goals:
 
 1. Refactor meltdown game using React
