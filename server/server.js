@@ -5,13 +5,15 @@ var path = require('path')
 
 var app = express()
 var server = require('http').Server(app)
-var port = process.env.PORT || 8000
+var port = process.env.PORT || 8080
 
 server.listen(port, function () {
   console.log('Running on port: ', port)
 })
 
-var staticPath = path.join(__dirname, '../public')
+var staticPath = path.join(__dirname, '../client')
+
+app.get('/hey', (req, res) => res.send('ho!'))
 app.use(express.static(staticPath))
 
 // var Firebase = require('firebase')
