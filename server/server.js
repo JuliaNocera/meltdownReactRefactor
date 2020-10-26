@@ -11,7 +11,22 @@ server.listen(port, function () {
   console.log('Running on port: ', port)
 })
 
-var staticPath = path.join(__dirname, '../client')
+/* 
+https://flaviocopes.com/how-to-serve-react-from-same-origin/
+
+The setup to serve the static assets in production is from the above site
+and may need some tweaks to setup correctly with the frontend config 
+if and when this app is deployed
+*/
+app.use(express.static(path.join(__dirname, 'build')))
+
+app.get('/ping', (req, res) => {
+  return res.send('pong')
+})
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 
 app.get('/hey', (req, res) => res.send('ho!'))
 app.use(express.static(staticPath))

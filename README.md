@@ -1,34 +1,40 @@
-To run:
+# JS Meltdown Game Refactor
 
-1. run `npm install`
-2. `cd public/`
-3. `npx webpack` --> this will build an app.js file in /public
-4. `cd ../`
-5. run `npm start`
-6. go to localhost:8000
+Back in 2015, I wrote a javasript web game with a few other folks at Hack Reactor. I think it was a pretty fun idea for a game and I've always wanted to refactor it into React and a more modern setup. 
 
-#### Less than ideal things about current local dev setup
+This repo has both the 
 
-- webpack config should be global, not in `/public`
-- build output should go to a `/build` folder
-- should have hot reloading with webpack & node
+## Local development
 
-# Goals:
+### Server
+1. `cd server`
+1. run `nvm use`
+1. run `npm i && npm start`
+1. The server is running on port 8080
+
+### Client
+1. `cd client`
+1. run `nvm use`
+1. run `npm i && npm start`
+1. The client app is running on port 3000 (this is just the default create-react-app port)
+
+_note: all requests from the client will be proxied to the server via a proxy line in the package.json_
+_the proxy setup tip was from this site https://flaviocopes.com/how-to-serve-react-from-same-origin/_ 
+
+## Goals:
 
 1. Refactor meltdown game using React
 2. Setup react + node project from scratch
 3. Use new firebase API
 
-## Reasons:
+### Reasons:
 
-1. All packages (nmp and bower) are way out of date
-2. Find out how does Phaser.js interact with React
+1. Find out how does Phaser.js interact with React
    i. Renders fast?
-3. Angualr 1 is dead
+1. Angualr 1 is dead
 
-### Tasks:
+#### Tasks:
 
-1. Hot reloading with weback middleware in node
 1. setup initial joining room - simple button click for now
    a. room name
    b. guest name
