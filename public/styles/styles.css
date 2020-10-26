@@ -1,0 +1,7 @@
+body {
+  display: flex;
+}
+
+.play-button {
+  align-self: center;
+}
